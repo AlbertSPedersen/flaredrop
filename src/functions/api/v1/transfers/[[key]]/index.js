@@ -22,6 +22,7 @@ export const onRequestGet = async ({env, params, next}) => {
     })
         .then(result => new Response(result.Body, {
             headers: {
+                'cache-control': 'immutable, public, s-maxage=86400',
                 'content-disposition': result.ContentDisposition,
                 'content-type': result.ContentType,
                 'etag': result.ETag,
