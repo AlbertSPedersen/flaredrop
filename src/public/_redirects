@@ -1,0 +1,2 @@
+/cli /api/v1/cli 302
+/t/:key /api/v1/transfers/:key 302
