@@ -1,2 +1,3 @@
 /api/*
+    cache-control: s-maxage=0
     content-type: text/plain

@@ -32,7 +32,12 @@ export const onRequestGet = async ({env, params, next}) => {
         .catch(error => {
             switch(error.name) {
                 case 'NoSuchKey':
-                    return new Response('That key does not exist!' + '\n', {status: 404})
+                    return new Response('That key does not exist!' + '\n', {
+                        status: 404,
+                        headers: {
+                            'cache-control': 's-maxage=0'
+                        }
+                    })
                 default:
                     throw error
             }
