@@ -1,14 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>FlareDrop</title>
-    </head>
-    <body>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>FlareDrop</title>
+    <meta name="description" content="Transfer large files quickly and easily! Up to 50 GiB. Unlimited downloads. 1 hour retention. For free. No sign-up."/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" type="image/svg+xml" href="/static/img/flaredrop.svg"/>
+    <link rel="stylesheet" href="/static/css/reset.css"/>
+    <link rel="stylesheet" href="/static/css/flaredrop.css"/>
+</head>
+<body>
+    <header>
+        <img src="/static/img/flaredrop.svg" alt="FlareDrop logo" height="96" width="96">
         <h1>FlareDrop</h1>
-        <p>The frontend is still under construction, but feel free to <a href="/cli">use the CLI</a> :)</p>
-        <p>Copyright (c) 2021 Albert Søndergård Pedersen. Licensed under the MIT license.</p>
-        <p><a href="https://github.com/AlbertSPedersen/flaredrop">Source Code</a></p>
-    </body>
+        <h2>Transfer large files quickly and easily!</h2>
+        <h3>Up to 50 GiB. Unlimited downloads. <strike>1 hour</strike> 1 day retention. For free. No sign-up.</h3>
+    </header>
+    <main>
+        <!-- <form id="downloadForm">
+            <label for="downloadFormCode">Have a download code?</label>
+            <input class="download-code" type="tel" name="code" id="downloadFormCode" placeholder="XXXX XXXX XXXX XXXX" size="19" maxlength="19" required>
+            <button type="submit">Download</button>
+        </form> -->
+        <form id="uploadForm">
+            <label for="uploadFormFile">Want to upload a file?</label>
+            <input type="file" name="file" id="uploadFormFile" onchange="this.nextElementSibling.value = this.files[0].name" required>
+            <input type="text" onclick="event.preventDefault(); this.previousElementSibling.click()" placeholder="Choose file..." readonly>
+            <button type="submit" id="uploadButton">Upload</button>
+        </form>
+    </main>
+    <footer>
+        <p>Copyright © 2021-2022 Albert Pedersen</p>
+    </footer>
+    <script src="/static/js/axios.min.js"></script>
+    <script src="/static/js/flaredrop.js"></script>
+</body>
 </html>
