@@ -1,3 +1,5 @@
 user-agent: *
 disallow: /api/
 disallow: /drops/
+disallow: /t/
+allow: /api/v1/cli
